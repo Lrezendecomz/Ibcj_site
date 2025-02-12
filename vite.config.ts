@@ -3,11 +3,14 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/',  // 🔹 Garante que todas as rotas sejam tratadas corretamente
+  base: '/',  // 🔹 Define a base correta para os caminhos
   build: {
     outDir: 'build'
   },
   server: {
-    historyApiFallback: true  // 🔹 Ajuda no redirecionamento para evitar erro 404
+    historyApiFallback: true // 🔹 Tenta redirecionar as rotas para o index.html
+  },
+  preview: {
+    historyApiFallback: true // 🔹 Corrige erro ao testar localmente
   }
 });
