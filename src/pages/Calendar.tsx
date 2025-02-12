@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Calendar as CalendarIcon } from 'lucide-react';
+import BackButton from "../components/BackButton"; // Corrigi o caminho da importação
 
-// Dados dos eventos
 const events = [
   { date: '15 Abril 2024', time: '19:00', title: 'Culto de Jovens Especial', description: 'Uma noite especial...', location: 'Templo Principal', category: 'culto' },
   { date: '17 Março 2024', time: '09:00', title: 'Escola Bíblica Dominical', description: 'Estudo bíblico...', location: 'Salas de Estudo', category: 'culto' },
@@ -17,12 +17,11 @@ const events = [
 export default function CalendarPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []); // Executa apenas quando a página carregar
-
+  }, []);// Executa apenas quando a página carregar
+   
   const [selectedCategory, setSelectedCategory] = useState('');
   const [selectedMonth, setSelectedMonth] = useState('Março 2024');
-
-  // Função para filtrar eventos
+// Função para filtrar eventos
   const filteredEvents = events.filter(event => {
     const matchesCategory = selectedCategory ? event.category === selectedCategory : true;
     const matchesMonth = selectedMonth ? event.date.includes(selectedMonth) : true;
@@ -31,13 +30,15 @@ export default function CalendarPage() {
 
   return (
     <div className="space-y-8 p-4">
+      <BackButton /> {/* Adicionado o botão aqui */}
+
       <div className="flex flex-col md:flex-row items-center justify-between">
         <div className="mb-4 md:mb-0">
           <h1 className="text-2xl md:text-3xl font-bold text-gray-900">Calendário Completo</h1>
           <p className="text-gray-600 mt-2">Todos os eventos e atividades da nossa igreja</p>
         </div>
+        
         <div className="flex flex-col md:flex-row gap-2 md:gap-4 w-full md:w-auto">
-          {/* Filtro por tipo de evento */}
           <select
             className="px-3 py-2 md:px-4 md:py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm md:text-base"
             value={selectedCategory}
@@ -50,7 +51,6 @@ export default function CalendarPage() {
             <option value="aula">Ebd</option>
           </select>
 
-          {/* Filtro por mês */}
           <select
             className="px-3 py-2 md:px-4 md:py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm md:text-base"
             value={selectedMonth}
@@ -97,3 +97,4 @@ export default function CalendarPage() {
     </div>
   );
 }
+
