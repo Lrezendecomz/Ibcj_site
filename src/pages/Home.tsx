@@ -7,19 +7,29 @@ export default function Home() {
 
     return (
       <div className="space-y-12">
-        <section className="relative h-[500px] rounded-2xl overflow-hidden">
-          <img
-            src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1920"
-            alt="Árvore de folhas verdes cercada por neblina"
-            className="w-full h-full object-cover"
-            />
-          <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-            <div className="text-center text-white">
-              <h1 className="text-5xl font-bold mb-4">Igreja Batista Carvalhos de Justiça</h1>
-              <p className="text-xl font-bold mb-4">Venha fazer parte da nossa família</p>
-            </div>
-          </div>
-        </section>
+  <section className="relative h-[300px] md:h-[500px] rounded-2xl overflow-hidden">
+    {/* Imagem de fundo */}
+    <img
+      src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1920"
+      alt="Árvore de folhas verdes cercada por neblina"
+      className="w-full h-full object-cover"
+    />
+
+    {/* Sobreposição escura com gradiente */}
+    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-black/20 flex items-center justify-center">
+      <div className="text-center text-white px-4">
+        {/* Título principal */}
+        <h1 className="text-3xl md:text-5xl font-bold mb-4">
+          Igreja Batista Carvalhos de Justiça
+        </h1>
+        {/* Subtítulo */}
+        <p className="text-lg md:text-xl font-bold">
+          Venha fazer parte da nossa família
+        </p>
+      </div>
+    </div>
+  </section>
+</div>
   
         <section className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           <Link
