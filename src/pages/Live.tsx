@@ -1,5 +1,6 @@
 import React from 'react';
 import { Radio } from 'lucide-react';
+import BackButton from "../components/BackButton"; // Corrigi o caminho da importação
 
 export default function Live() {
   const isLive = true; // This should be controlled by your actual live status
@@ -7,6 +8,7 @@ export default function Live() {
 
   return (
     <div className="space-y-8">
+      <BackButton /> {/* Adicionado o botão aqui */}
       <div className="flex items-center space-x-3">
         <h1 className="text-3xl font-bold">Ao Vivo</h1>
         {isLive && (
