@@ -30,16 +30,16 @@ export default function CalendarPage() {
   });
 
   return (
-    <div className="space-y-8">
-      <div className="flex items-center justify-between">
-        <div>
-          <h1 className="text-3xl font-bold text-gray-900">Calendário Completo</h1>
+    <div className="space-y-8 p-4">
+      <div className="flex flex-col md:flex-row items-center justify-between">
+        <div className="mb-4 md:mb-0">
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-900">Calendário Completo</h1>
           <p className="text-gray-600 mt-2">Todos os eventos e atividades da nossa igreja</p>
         </div>
-        <div className="flex gap-4">
+        <div className="flex flex-col md:flex-row gap-2 md:gap-4 w-full md:w-auto">
           {/* Filtro por tipo de evento */}
           <select
-            className="px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            className="px-3 py-2 md:px-4 md:py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm md:text-base"
             value={selectedCategory}
             onChange={(e) => setSelectedCategory(e.target.value)}
           >
@@ -52,7 +52,7 @@ export default function CalendarPage() {
 
           {/* Filtro por mês */}
           <select
-            className="px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            className="px-3 py-2 md:px-4 md:py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm md:text-base"
             value={selectedMonth}
             onChange={(e) => setSelectedMonth(e.target.value)}
           >
@@ -65,12 +65,12 @@ export default function CalendarPage() {
       </div>
 
       <div className="bg-white rounded-xl shadow-sm">
-        <div className="grid gap-6 p-6">
+        <div className="grid gap-6 p-4 md:p-6">
           {filteredEvents.length > 0 ? (
             filteredEvents.map((event, index) => (
               <div 
                 key={index}
-                className="flex items-start space-x-6 p-4 rounded-xl hover:bg-gray-50 transition-colors border border-gray-100"
+                className="flex flex-col md:flex-row items-start space-y-4 md:space-y-0 md:space-x-6 p-4 rounded-xl hover:bg-gray-50 transition-colors border border-gray-100"
               >
                 <div className="min-w-[120px] text-center">
                   <div className="bg-blue-50 rounded-lg p-3">
