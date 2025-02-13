@@ -1,5 +1,4 @@
 import React from 'react';
-import BackButton from "../components/BackButton"; // Corrigi o caminho da importação
 
 const videos = [
   {
@@ -18,7 +17,6 @@ const videos = [
 export default function Videos() {
   return (
     <div className="space-y-8">
-      <BackButton /> {/* Adicionado o botão aqui */}
       <h1 className="text-3xl font-bold">Vídeos</h1>
       
       <div className="grid md:grid-cols-2 gap-8">
