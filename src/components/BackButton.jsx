@@ -1,6 +1,5 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
+import { useNavigate } from 'react-router-dom';
+import { ArrowLeft } from 'lucide-react';
 
 export default function BackButton() {
   const navigate = useNavigate();
@@ -8,9 +7,10 @@ export default function BackButton() {
   return (
     <button
       onClick={() => navigate(-1)}
-      className="fixed top-4 left-4 bg-gray-100 hover:bg-gray-200 text-gray-700 p-2 rounded-full shadow-md transition-all flex items-center gap-2"
+      className="text-gray-600 hover:text-blue-600 flex items-center"
+      aria-label="Voltar"
     >
-      <ArrowLeft className="w-5 h-5" />
+      <ArrowLeft className="w-6 h-6" />
     </button>
   );
 }
