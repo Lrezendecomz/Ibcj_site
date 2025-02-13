@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Calendar as CalendarIcon } from 'lucide-react';
-import BackButton from "../components/BackButton"; // Corrigi o caminho da importação
 
 const events = [
   { date: '15 Abril 2024', time: '19:00', title: 'Culto de Jovens Especial', description: 'Uma noite especial...', location: 'Templo Principal', category: 'culto' },
@@ -30,8 +29,6 @@ export default function CalendarPage() {
 
   return (
     <div className="space-y-8 p-4">
-      <BackButton /> {/* Adicionado o botão aqui */}
-
       <div className="flex flex-col md:flex-row items-center justify-between">
         <div className="mb-4 md:mb-0">
           <h1 className="text-2xl md:text-3xl font-bold text-gray-900">Calendário Completo</h1>
