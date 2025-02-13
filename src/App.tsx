@@ -7,10 +7,12 @@ import Videos from './pages/Videos';
 import Live from './pages/Live';
 import CalendarPage from './pages/Calendar';
 import Navbar from './components/Navbar';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <Router>
+       <ScrollToTop />
       <div className="min-h-screen bg-gray-50">
         <Navbar />
         <main className="container mx-auto px-4 py-8">
